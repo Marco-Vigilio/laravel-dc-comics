@@ -15,7 +15,7 @@ use App\Http\Controllers\Guest\PageController as PageController;
 |
 */
 
-//Route::get('/', [PageController::class, "index"]);
-Route::resource("index", PageController::class);
+Route::get('/', [PageController::class, "index"]);
+Route::resource("fumetto", PageController::class);
 
 
