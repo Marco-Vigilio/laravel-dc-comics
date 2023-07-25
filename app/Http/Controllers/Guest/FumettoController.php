@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\Comic;
+
 class FumettoController extends Controller
 {
     /**
@@ -14,9 +16,8 @@ class FumettoController extends Controller
      */
     public function index()
     {
-        
-        $fumetto = Fumetto::all();
-        return view("home",compact("fumetto"));
+        $fumetto = Comic::all();
+        return view("comics",compact("fumetto"));
         
     }
 
@@ -49,7 +50,7 @@ class FumettoController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
