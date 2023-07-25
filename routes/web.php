@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\PageController as PageController; 
 
-
+use App\Http\Controllers\Guest\FumettoController;
+use App\Http\Controllers\Guest\SuperHeroController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,7 @@ use App\Http\Controllers\Guest\PageController as PageController;
 */
 
 Route::get('/', [PageController::class, "index"]);
-Route::resource("fumetto", PageController::class);
+Route::resource("comic", FumettoController::class);
+Route::resource("superheros", SuperHeroController::class);
 
 
