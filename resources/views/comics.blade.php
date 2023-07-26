@@ -36,7 +36,7 @@
                                     View
                                 </a>
                                 <a class="btn btn-sm btn-success me-2"
-                                    href="#">
+                                    href="{{ route('comics.edit', $comic->id)}}">
                                     Edit
                                 </a>
                                 <form action="#" class="d-inline form-terminator" method="POST">

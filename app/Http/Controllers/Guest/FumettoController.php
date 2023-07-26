@@ -28,7 +28,7 @@ class FumettoController extends Controller
      */
     public function create()
     {
-        //
+        return view("newComic");
     }
 
     /**
@@ -62,7 +62,7 @@ class FumettoController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view("edit");
     }
 
     /**
