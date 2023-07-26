@@ -7,5 +7,6 @@
         Show Comic 
     </h1>
     <div>
+        {{$comic->title}}
     </div>
 @endsection
