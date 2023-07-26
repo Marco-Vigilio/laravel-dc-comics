@@ -50,7 +50,7 @@ class FumettoController extends Controller
      */
     public function show($id)
     {
-        return view("show");
+        return view("show", compact("id"));
     }
 
     /**
