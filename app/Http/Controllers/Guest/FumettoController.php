@@ -50,7 +50,9 @@ class FumettoController extends Controller
      */
     public function show($id)
     {
-        return view("show", compact("id"));
+        $comic = Comics::findOrFail($id);
+        dd($id);
+        return view("show", compact("comic"));
     }
 
     /**
