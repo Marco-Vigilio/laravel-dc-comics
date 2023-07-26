@@ -18,7 +18,6 @@ use App\Http\Controllers\Guest\SuperHeroController;
 
 Route::get('/', [PageController::class, "index"]);
 Route::resource("comics", FumettoController::class);
-
 Route::resource("superheros", SuperHeroController::class);
 
 
