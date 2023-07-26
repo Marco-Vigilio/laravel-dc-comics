@@ -9,7 +9,7 @@
     <div>
         @foreach($fumetto as $comic)
             <li>
-                <a href=  "{{ route('comic', $comic->id) }}" >
+                <a href=  "{{ route('show', $comic->id) }}" >
                     {{$comic->title}} - {{$comic->price}}
                 </a>
             </li>
