@@ -17,7 +17,7 @@ class SuperHeroController extends Controller
     public function index()
     {
         $superherosList = SuperHero::all();
-        return view("superheros", compact("superherosList"));
+        return view("superheros.index", compact("superherosList"));
     }
 
     /**
@@ -49,7 +49,8 @@ class SuperHeroController extends Controller
      */
     public function show($id)
     {
-        //
+        $superhero = SuperHero::findOrFail($id);
+        return view("superheros.show", compact("superhero"));
     }
 
     /**
@@ -58,9 +59,9 @@ class SuperHeroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(SuperHero $superhero)
     {
-        //
+        return view("superheros.edit", compact("superhero"));
     }
 
     /**
@@ -70,9 +71,12 @@ class SuperHeroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, SuperHero $superhero)
     {
-        //
+        $data = $request->validate(['name' => ['required', 'unique:superheros']]);
+        $superhero->update($data);
+
+        return redirect()->route('superheros.show', compact('superhero'));
     }
 
     /**
