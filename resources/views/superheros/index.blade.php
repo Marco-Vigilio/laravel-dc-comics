@@ -32,7 +32,7 @@
                         <a class="btn btn-sm btn-success me-2" href="{{ route('superheros.edit',$superhero->id)}}">
                             Edit
                         </a>
-                        <form action="#" class="d-inline form-terminator" method="POST">
+                        <form action="{{route('superheros.destroy', $superhero)}}" class="d-inline form-terminator" method="POST">
                             @csrf
                             @method('DELETE')
 

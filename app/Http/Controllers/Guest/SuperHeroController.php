@@ -85,8 +85,9 @@ class SuperHeroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(SuperHero $superhero)
     {
-        //
+        $superhero->delete();
+        return redirect()->route('superheros.index', compact('superhero'));
     }
 }
