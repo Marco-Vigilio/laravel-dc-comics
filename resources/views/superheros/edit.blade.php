@@ -4,7 +4,7 @@
 
 @section('main-content')
 <h1>
-    Show SuperHero Edit
+    SuperHero Edit
 </h1>
 <div>
     <form action="{{route('superheros.update', $superhero)}}" method="POST" enctype="multipart/form-data">

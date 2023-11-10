@@ -27,7 +27,6 @@ class SuperHeroController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -73,7 +72,9 @@ class SuperHeroController extends Controller
      */
     public function update(Request $request, SuperHero $superhero)
     {
-        $data = $request->validate(['name' => ['required', 'unique:superheros']]);
+        //*nella request se obbligo di richiesta mettere ('unique:superheros,name,' . $superhero->id)
+        //*altrimenti visto che univoco, segna che esiste gia il nome
+        $data = $request->validate(['name' => ['required', 'unique:superheros,name,' . $superhero->id]]);
         $superhero->update($data);
 
         return redirect()->route('superheros.show', compact('superhero'));
