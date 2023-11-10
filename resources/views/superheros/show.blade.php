@@ -7,6 +7,11 @@
     Show SuperHero
 </h1>
 <div>
-    {{$superhero->name}}
+    <p>name: {{$superhero->name}}</p>
+</div>
+<div>
+    <a class="btn btn-sm btn-primary me-2" href="{{ route('superheros.index')}}">
+        Back to List
+    </a>
 </div>
 @endsection

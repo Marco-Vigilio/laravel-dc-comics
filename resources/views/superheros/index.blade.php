@@ -3,25 +3,25 @@
 @section('title', 'Welcome')
 
 @section('main-content')
-<h1>
+<h1 class="text-center my-3">
     Superhero List
 </h1>
-<div class="row">
-    <div class="col-12">
+<div class="row m-auto">
+    <div class="col-11 m-auto">
         <table class="table table-striped table-hover text-center table-bordered">
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th>Actions</th>
+                    <th class="col-1">Id</th>
+                    <th class="col-7">Name</th>
+                    <th class="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($superherosList as $superhero)
-                <tr>
-                    <th scope="row">
+                <tr class="">
+                    <td scope="col-3">
                         {{$superhero->id}}
-                    </th>
+                    </td>
                     <td>
                         {{$superhero->name}}
                     </td>
