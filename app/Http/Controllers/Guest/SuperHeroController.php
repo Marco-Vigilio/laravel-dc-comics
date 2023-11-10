@@ -16,7 +16,9 @@ class SuperHeroController extends Controller
      */
     public function index()
     {
-        $superherosList = SuperHero::all();
+        //$superherosList = SuperHero::all();
+        //paginate per visualizzarli di 10 in 10
+        $superherosList = SuperHero::paginate(10);
         return view("superheros.index", compact("superherosList"));
     }
 

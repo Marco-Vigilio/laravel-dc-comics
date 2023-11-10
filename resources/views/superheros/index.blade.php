@@ -46,6 +46,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{$superherosList->links()}}
     </div>
 </div>
 @endsection
