@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('helpers', function (Blueprint $table) {
-            $table->unsignedBigInteger('superhero_id')->primary();
+            $table->unsignedBigInteger('super_hero_id')->primary();
             $table->string("name", 60);
             $table->timestamps();
 
-            $table->foreign('superhero_id')
+            $table->foreign('super_hero_id')
                 ->references('id')
                 ->on('superheros')
                 ->cascadeOnUpdate()

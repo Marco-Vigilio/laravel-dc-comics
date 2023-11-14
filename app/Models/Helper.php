@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Helper extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+    ];
+    function superhero()
+    {
+        return $this->belongsTo(SuperHero::class);
+    }
 }

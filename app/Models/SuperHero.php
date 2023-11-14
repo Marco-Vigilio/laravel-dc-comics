@@ -13,4 +13,9 @@ class SuperHero extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function helpers()
+    {
+        return $this->hasMany(Helper::class);
+    }
 }

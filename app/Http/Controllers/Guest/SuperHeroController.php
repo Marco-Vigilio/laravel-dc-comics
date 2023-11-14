@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\SuperHero;
+use App\Models\Helper;
 
 class SuperHeroController extends Controller
 {
@@ -29,6 +30,9 @@ class SuperHeroController extends Controller
      */
     public function create()
     {
+        $superheros = SuperHero::all();
+        $helpers = Helper::all();
+        return view("superhero.create", compact("superheros", "helpers"));
     }
 
     /**
@@ -51,7 +55,9 @@ class SuperHeroController extends Controller
     public function show($id)
     {
         $superhero = SuperHero::findOrFail($id);
-        return view("superheros.show", compact("superhero"));
+        $helpers = Helper::all();
+        return view("superheros.show", compact("superhero", "helpers"));
+        //return dd($helpers);
     }
 
     /**
@@ -62,7 +68,8 @@ class SuperHeroController extends Controller
      */
     public function edit(SuperHero $superhero)
     {
-        return view("superheros.edit", compact("superhero"));
+        $helpers = Helper::all();
+        return view("superheros.edit", compact("superhero", "helpers"));
     }
 
     /**

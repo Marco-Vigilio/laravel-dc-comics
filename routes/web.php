@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Guest\PageController as PageController; 
+use App\Http\Controllers\Guest\PageController as PageController;
 
 use App\Http\Controllers\Guest\FumettoController;
 use App\Http\Controllers\Guest\SuperHeroController;
+use App\Http\Controllers\Guest\HelperController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,5 +20,4 @@ use App\Http\Controllers\Guest\SuperHeroController;
 Route::get('/', [PageController::class, "index"]);
 Route::resource("comics", FumettoController::class);
 Route::resource("superheros", SuperHeroController::class);
-
-
+Route::resource("helpers", HelperController::class);
