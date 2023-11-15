@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('helpers', function (Blueprint $table) {
-            $table->unsignedBigInteger('super_hero_id')->primary();
+            $table->id();
+            $table->unsignedBigInteger('super_hero_id');
             $table->string("name", 60);
             $table->timestamps();
 

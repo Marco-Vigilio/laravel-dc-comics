@@ -7,11 +7,15 @@
     Show SuperHero
 </h1>
 <div>
-    <p>name: {{$superhero->name}}</p>
+    <h2>Name: </h2>
+    <p>{{$superhero->name}}</p>
 
-    @foreach ($superhero->helpers as $helper)
-    <p> helpers: {{ $helper->name }} --</p>
-    @endforeach
+    <h3>Helpers: </h3>
+    <ul>
+        @foreach ($superhero->helpers as $helper)
+        <li>{{ $helper->name }} --</li>
+        @endforeach
+    </ul>
 
 </div>
 <div>

@@ -32,7 +32,7 @@ class SuperHeroController extends Controller
     {
         $superheros = SuperHero::all();
         $helpers = Helper::all();
-        return view("superhero.create", compact("superheros", "helpers"));
+        return view("superheros.create", compact("superheros", "helpers"));
     }
 
     /**
@@ -43,7 +43,15 @@ class SuperHeroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //return $request;
+        $data = $request->validate([
+            'name' => ['required', 'unique:superheros']
+        ]);
+
+        $newSuperHero = SuperHero::create($data);
+        $newSuperHero->save();
+
+        return redirect()->route('superheros.index');
     }
 
     /**
